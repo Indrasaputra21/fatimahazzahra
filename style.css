@@ -1,0 +1,343 @@
+/* ================= GENERAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #1E293B;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: #0F172A;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    color: white;
+    display: inline;
+}
+
+nav {
+    float: right;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+nav.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #0F172A;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* ================= HERO ================= */
+.hero {
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(120deg, #0F172A, #1E293B);
+    color: white;
+    flex-wrap: wrap;
+}
+
+.hero-text h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #01216c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #d4af37;
+}
+
+.hero-image {
+    flex: 0 0 250px;
+    text-align: left;
+}
+
+.hero-image img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 60px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+.bg-light {
+    background: #f8fafc;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.card span {
+    display: block;
+    margin-bottom: 10px;
+    color: #64748b;
+}
+
+.card ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+}
+
+/* ================= SKILLS ================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.skill {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 8px;
+    background: #0F172A;
+    border-radius: 4px;
+    margin-top: 8px;
+    transition: width 1s;
+}
+
+/* ================= PROJECTS ================= */
+.projects-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.chart-card {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #0F172A;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 768px) {
+    nav { display: none; float: none; }
+    .hamburger { display: flex; }
+    .hero { flex-direction: column; text-align: center; padding: 60px 20px; }
+    .hero-image { margin-top: 20px; text-align: center; }
+    .hero-image img { width: 150px; height: 200px; }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-text h2 { font-size: 26px; }
+    .hero-text p { font-size: 14px; }
+    footer { font-size: 12px; padding: 15px; }
+}
+
+header h1 {
+    font-size: clamp(20px, 4vw, 36px); /* minimal 20px, maksimal 36px, menyesuaikan layar */
+    color: white;
+}
+
+header {
+    padding: 15px 0; 
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* supaya nav turun di layar kecil */
+}
+
+nav a {
+    font-size: clamp(12px, 1.5vw, 16px); /* teks menu responsive */
+    margin-left: 20px;
+}
+
+/* Hero */
+.hero-text h2 {
+    font-size: clamp(24px, 5vw, 36px); /* minimal 24px, maksimal 36px, skala sesuai layar */
+}
+
+.hero-text p {
+    font-size: clamp(14px, 2.5vw, 18px);
+}
+
+/* Sections headings */
+.section h2 {
+    font-size: clamp(20px, 4vw, 28px);
+}
+
+/* Card headings */
+.card h3 {
+    font-size: clamp(16px, 3vw, 22px);
+}
+
+/* Card paragraph / list */
+.card ul li,
+.section p {
+    font-size: clamp(12px, 2vw, 16px);
+}
+
+/* Footer */
+footer {
+    font-size: clamp(12px, 1.5vw, 16px);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+    display: none;           
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: clamp(2px, 0.3vw, 4px);  /* tinggi garis responsif */
+    width: clamp(20px, 5vw, 30px);   /* lebar garis responsif */
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Tampilkan hamburger di tablet & mobile */
+@media screen and (max-width: 768px) {
+    .hamburger { display: flex; }
+    nav { display: none; }
+}
+
+/* Toggle menu aktif */
+nav.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #0F172A;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: max-content; /* mengikuti isi menu */
+}
+
+/* Opsional: efek animasi saat hamburger diklik */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
